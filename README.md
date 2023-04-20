@@ -98,8 +98,6 @@ Download the WinPcap installer from https://www.winpcap.org/install/default.htm.
 
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
-
 
 
 <!-- CONTACT -->
