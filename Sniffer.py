@@ -59,13 +59,13 @@ class MainSniffer():
         self.nofilters = False
 
     def follow_tcp_stream(self, packetlyst, src_port, dst_port, seq_num):
-        print('im called')
+        print('Following TCP STREAM')
         print(f'{src_port},{dst_port},{seq_num}')
         tcp_packets= list()
         tcp_payloads= list()
         for pkts in packetlyst:
             if str(pkts[TCP].sport) == src_port and str(pkts[TCP].dport) == dst_port and str(pkts[TCP].seq) == seq_num:
-                print('a packet passed')
+                print(f'STREAM:{str(pkts[TCP].sport)} -----> {str(pkts[TCP].dport)} (SEQ #: {str(pkts[TCP].seq)} )' )
                 tcp_packets.append(pkts)
                 print(pkts[TCP].payload)
 
@@ -79,7 +79,6 @@ class MainSniffer():
     
     def start(self):
         if self.tcp:
-            print('hello')
             sniff(filter="tcp and port "+self.port, count= 20, promisc=True, prn=self.sniffer)
         elif self.udp:
             sniff(filter="udp", prn=self.sniffer, count=10)

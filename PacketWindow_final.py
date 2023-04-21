@@ -252,8 +252,10 @@ class Ui_SnifferWindow(object):
             for i in split[1:]:
                 self.textEdit_2.append(i)
                 self.textEdit_2.append(" ")
-
-        self.textEdit_2.append('----TCP STREAM----')
+        self.textEdit_2.append('\n')
+        self.textEdit_2.append('----------------------------------')
+        self.textEdit_2.append('\n')
+        self.textEdit_2.append('----TCP PAYLOAD----')
         packets_1= self.pcap
         print(f'{source},{destination},{seq}')
         tcpstream = Sniffer.MainSniffer.follow_tcp_stream(self, packets_1, source, destination, seq)
@@ -287,9 +289,11 @@ class Ui_SnifferWindow(object):
             if self.tcp_radio.isChecked():
                 print("TCP CHECKED")
                 engine.is_tcp()
-                print("UDP CHECKED")
+                
             elif self.udp_radio.isChecked():
+                print("UDP CHECKED")
                 engine.is_udp()
+
 
             t1 = threading.Thread(target=engine.start)
 
