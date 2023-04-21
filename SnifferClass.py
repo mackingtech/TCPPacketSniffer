@@ -33,7 +33,7 @@ class Sniffed():
     def get_data(self, datatype):
         x=datatype
         if datatype == 'payload' and not None:
-            return hexstr(self.packet_frame[x])
+            return bytes(self.packet_frame[x])
         
         elif not None:
             return str(self.packet_frame[x])
