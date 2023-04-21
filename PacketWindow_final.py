@@ -178,6 +178,10 @@ class Ui_SnifferWindow(object):
         self.follow_button_2.clicked.connect(self.save_pcap)
 
     def follow_click(self, qmodelindex):
+        clear = lambda: os.system('cls')
+        color = lambda: os.system('color 02')
+        clear()
+        color()
         self.textEdit.clear()
         self.textEdit_2.clear()
         item = self.listWidget.currentItem()
@@ -187,12 +191,12 @@ class Ui_SnifferWindow(object):
 
 
 
-        print(string_txt)
-        print(string_txt[0])
+        #print(string_txt)
+        #print(string_txt[0])
 
         # this code is a hard code for indicing the string partitions to remove [] when stored
         ind= (string_txt[0])[1:-1]
-        print(ind)
+        #print(ind)
         #self.textEdit.setText(str(self.totals[index]))
         #print(type(self.record_keep[ind]))
         self.textEdit.append("-------IP SOURCE---------")
@@ -218,27 +222,20 @@ class Ui_SnifferWindow(object):
         self.textEdit_2.append("-------PAYLOAD---------")
 
         hexinfo = self.record_keep[ind].get_data('payload')
+        hexinfo = str(hexinfo.decode('utf-8', errors='ignore'))
         
-        self.textEdit_2.append((self.record_keep[ind].get_data('payload')))
+        self.textEdit_2.append(hexinfo)
 
         if 'POST' in hexstr(hexinfo):
             self.textEdit.append('---Check Payload for POST--')
-            split = hexstr(hexinfo).split("..")
             self.textEdit_2.clear()
             self.textEdit_2.append("POST IDENTIFIED")
-            for i in split[1:]:
-                self.textEdit_2.append(i)
-                self.textEdit_2.append(" ")
+            self.textEdit_2.append(hexinfo)
         elif 'GET' in hexstr(hexinfo):
             self.textEdit.append('---Check Payload for GET--')
-            split = hexstr(hexinfo).split("..")
             self.textEdit_2.clear()
             self.textEdit_2.append("GET IDENTIFIED")
-            
-            for i in split[1:]:
-                
-                self.textEdit_2.append(i)
-                self.textEdit_2.append(" ")
+            self.textEdit_2.append(hexinfo)
             
             #self.textEdit.append("GET IDENTIFIED")
             #self.textEdit.append(str(hexinfo).partition("GET")[1])
@@ -246,21 +243,17 @@ class Ui_SnifferWindow(object):
             
         elif 'HTTP' in hexstr(hexinfo):
             self.textEdit.append('---Check Payload for HTTP--')
-            split = hexstr(hexinfo).split("..")
             self.textEdit_2.clear()
             self.textEdit_2.append("HTTP HEADER IDENTIFIED")
-            for i in split[1:]:
-                self.textEdit_2.append(i)
-                self.textEdit_2.append(" ")
+            self.textEdit_2.append(hexinfo)
         self.textEdit_2.append('\n')
         self.textEdit_2.append('----------------------------------')
         self.textEdit_2.append('\n')
-        self.textEdit_2.append('----TCP PAYLOAD----')
+        self.textEdit_2.append('----TCP Stream----')
         packets_1= self.pcap
-        print(f'{source},{destination},{seq}')
+        #print(f'{source},{destination},{seq}')
         tcpstream = Sniffer.MainSniffer.follow_tcp_stream(self, packets_1, source, destination, seq)
-        for i in tcpstream:
-            self.textEdit_2.append(i)
+        self.textEdit_2.append(tcpstream)
         
             #self.textEdit.clear()
             #self.textEdit.append("HTTP HEADER IDENTIFIED")
@@ -335,7 +328,7 @@ class Ui_SnifferWindow(object):
                 time.sleep(2)
                 
             else:
-                print(len(self.collection))
+                print('Sniffing Done Check Interface!')
                 
             
             self.completed = 100
