@@ -3,7 +3,7 @@ from scapy.all import *
 
 
 
-class Ui_MainWindow(object):
+class Attack_MainWindow(object):
     def setupUi(self, MainWindow):
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(785, 600)
@@ -87,7 +87,7 @@ class Ui_MainWindow(object):
 
     def retranslateUi(self, MainWindow):
         _translate = QtCore.QCoreApplication.translate
-        MainWindow.setWindowTitle(_translate("MainWindow", "MainWindow"))
+        MainWindow.setWindowTitle(_translate("MainWindow", "ARP SPOOF ATTACK - Net-Scent @ Mark Miranda"))
         self.sniff_pushButton.setText(_translate("MainWindow", "SNIFF"))
         self.attackButton.setText(_translate("MainWindow", "Attack"))
         self.target_label.setText(_translate("MainWindow", "TARGET IP:"))
@@ -98,7 +98,7 @@ if __name__ == "__main__":
     import sys
     app = QtWidgets.QApplication(sys.argv)
     MainWindow = QtWidgets.QMainWindow()
-    ui = Ui_MainWindow()
+    ui = Attack_MainWindow()
     ui.setupUi(MainWindow)
     MainWindow.show()
     sys.exit(app.exec())

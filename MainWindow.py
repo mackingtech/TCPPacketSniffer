@@ -1,6 +1,6 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PacketWindow_final import Ui_SnifferWindow
-import AttackWindow
+from AttackWindow import Attack_MainWindow
 
 
 class Ui_MainWindow(object):
@@ -31,6 +31,7 @@ class Ui_MainWindow(object):
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
 
         self.pushButton.clicked.connect(self.packet_window)
+        self.pushButton_2.clicked.connect(self.attack_window)
 
     def packet_window(self):
         self.window= QtWidgets.QMainWindow()
@@ -41,7 +42,7 @@ class Ui_MainWindow(object):
 
     def attack_window(self):
         self.window= QtWidgets.QMainWindow()
-        self.ui = AttackWindow.Ui_MainWindow()
+        self.ui = Attack_MainWindow()
         self.ui.setupUi(self.window)
         self.window.show()
         MainWindow.close()

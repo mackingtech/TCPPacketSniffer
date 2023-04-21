@@ -362,7 +362,7 @@ class Ui_SnifferWindow(object):
 
     def retranslateUi(self, SnifferWindow):
         _translate = QtCore.QCoreApplication.translate
-        SnifferWindow.setWindowTitle(_translate("SnifferWindow", "Packet Sniffer"))
+        SnifferWindow.setWindowTitle(_translate("SnifferWindow", "Packet Sniffer - Net-Scent @ Mark Miranda"))
         self.label_2.setText(_translate("SnifferWindow", "FILTERS:"))
         self.sniff_button.setText(_translate("SnifferWindow", "Start Sniffer"))
         self.tcp_label.setText(_translate("SnifferWindow", "TCP"))
