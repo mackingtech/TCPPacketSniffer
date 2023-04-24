@@ -1,6 +1,7 @@
 from PyQt6 import QtCore, QtGui, QtWidgets
 from PacketWindow_final import Ui_SnifferWindow
 from AttackWindow import Attack_MainWindow
+import os
 
 
 class Ui_MainWindow(object):
@@ -39,6 +40,7 @@ class Ui_MainWindow(object):
 
         MainWindow.setObjectName("MainWindow")
         MainWindow.resize(479, 253)
+        
         MainWindow.setStyleSheet("background-color: rgb(24, 24, 24);")
         self.centralwidget = QtWidgets.QWidget(parent=MainWindow)
         self.centralwidget.setObjectName("centralwidget")
@@ -61,6 +63,9 @@ class Ui_MainWindow(object):
 
         self.retranslateUi(MainWindow)
         QtCore.QMetaObject.connectSlotsByName(MainWindow)
+
+
+
 
         self.pushButton.clicked.connect(self.packet_window)
         self.pushButton_2.clicked.connect(self.attack_window)

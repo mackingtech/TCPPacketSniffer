@@ -103,7 +103,7 @@ class MainSniffer():
             if str(pkts[TCP].sport) == src_port and str(pkts[TCP].dport) == dst_port and str(pkts[TCP].seq) == seq_num:
                 exchange += str(f'{str(pkts[TCP].sport)} -----> {str(pkts[TCP].dport)} (SEQ #: {str(pkts[TCP].seq)} ) (ACK #:{str(pkts[TCP].ack)})' + '\n')
                 print('-------------------------------------------------------------------------------------------------------------------')
-                print(f'STREAM:{str(pkts[TCP].sport)} -----> {str(pkts[TCP].dport)} (SEQ #: {str(pkts[TCP].seq)} )')
+                print(f'--------CONNECTION::{str(pkts[TCP].sport)} -----> {str(pkts[TCP].dport)} (SEQ #: {str(pkts[TCP].seq)} )--------')
                 print('-------------------------------------------------------------------------------------------------------------------')
                 print('---------------------------------------------------PAYLOAD---------------------------------------------------------')
                 if isinstance(pkts[TCP].payload, NoPayload):
@@ -116,7 +116,7 @@ class MainSniffer():
             elif str(pkts[TCP].sport) == dst_port and str(pkts[TCP].dport) == src_port and str(pkts[TCP].ack) == seq_num:
                 exchange += str(f'{str(pkts[TCP].sport)} <----- {str(pkts[TCP].dport)} (SEQ #: {str(pkts[TCP].ack)} )(ACK #:{str(pkts[TCP].seq)})' + '\n')
                 print('-------------------------------------------------------------------------------------------------------------------')
-                print(f'STREAM:{str(pkts[TCP].sport)} <----- {str(pkts[TCP].dport)} (ACKNOWLEDGED SEQ #: {str(pkts[TCP].ack)}) (ACK #:{str(pkts[TCP].seq)})')
+                print(f'--------CONNECTION:{str(pkts[TCP].sport)} <----- {str(pkts[TCP].dport)} (ACKNOWLEDGED SEQ #: {str(pkts[TCP].ack)}) (ACK #:{str(pkts[TCP].seq)})--------')
                 print('-------------------------------------------------------------------------------------------------------------------')
                 print('---------------------------------------------------PAYLOAD---------------------------------------------------------')
                 if isinstance(pkts[TCP].payload, NoPayload):
