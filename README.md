@@ -2,13 +2,13 @@
 <br />
 <div align="center">
   <a href="https://github.com/mackingtech/TCPPacketSniffer/">
-    <img src="https://imgur.com/a/RT5a59N" alt="Logo" width="80" height="80">
+    <img src="https://user-images.githubusercontent.com/82029531/234121288-df886c2f-973f-42b4-b992-bc1d61ebf9d0.png" alt="Logo" width="800" height="400">
   </a>
 
   <h2 align="center">Net-Scent</h3>
   <h3 align="center">"A study on networking fundamentals and a creation of a TCP packet sniffer"</h2>
 </div>
-![image](https://user-images.githubusercontent.com/82029531/234121288-df886c2f-973f-42b4-b992-bc1d61ebf9d0.png)
+
 
 
 
@@ -93,10 +93,36 @@ Download the WinPcap installer from https://www.winpcap.org/install/default.htm.
 
 <!-- USAGE EXAMPLES -->
 ## Usage
+Once you have installed all of the prerequisites you can download the zip file from this repository. Then extract the file, and once you do look for the file named <b>STARTME.bat</b>
+
+![image](https://user-images.githubusercontent.com/82029531/234121974-edd314c2-db16-4ef5-963c-f8bd30dc6afe.png)
+
+After opening that file you are now ready to use the tool!
+![image](https://user-images.githubusercontent.com/82029531/234122193-7c25747a-636e-4ec4-8d64-9f3aeb789359.png)
 
 
-<p align="right">(<a href="#readme-top">back to top</a>)</p>
+## You have 2 options Packet Sniffer or Pentest.
 
+### Packet Sniffer module will be focused on capturing TCP traffic within your local device.
+![image](https://user-images.githubusercontent.com/82029531/234122734-34c4316f-5382-4937-b884-2ca5ab31f3df.png)
+
+Filters:
+TCP
+UDP
+Ports:
+80 - HTTP
+443 - HTTPS
+
+### The PenTest module is an experimental module. This allows for showcasing ARP Spoofing, being able to capture network from a targetted device within your local are network
+![image](https://user-images.githubusercontent.com/82029531/234123578-a7282e42-7bac-4a91-9510-a120abcbf5f1.png)
+
+
+
+Router IP: ``` This is where you put the IP of your gateway ``` EX: 10.0.0.1, 192.168.0.1
+
+
+
+Target IP: ``` This is where you put the IP of your target ``` EX: 10.0.0.54, 192.168.0.23
 
 
 
@@ -114,7 +140,13 @@ Project Link: [https://github.com/mackingtech/TCPPacketSniffer](https://github.c
 
 <!-- ACKNOWLEDGMENTS -->
 ## Acknowledgments
+Dr. Weidong Liao
 
+
+Professor Ahmed Salem
+
+
+Agatha Mariano
 
 <p align="right">(<a href="#readme-top">back to top</a>)</p>
 
