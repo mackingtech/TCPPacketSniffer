@@ -8,6 +8,8 @@
   <h2 align="center">Net-Scent</h3>
   <h3 align="center">"A study on networking fundamentals and a creation of a TCP packet sniffer"</h2>
 </div>
+![image](https://user-images.githubusercontent.com/82029531/234121288-df886c2f-973f-42b4-b992-bc1d61ebf9d0.png)
+
 
 
 
@@ -38,7 +40,6 @@
 <!-- ABOUT THE PROJECT -->
 ## About The Project
 
-[![Product Name Screen Shot][product-screenshot]](https://example.com)
 
 This is my Captstone project for my final year at Shepherd University. It is a TCP/UDP Packet sniffer that provides a very minimalistic and simple design for beginners to be able to use it with ease. It is focused mainly on important header values that are parsed for the user to see. It tackles the idea of what packet sniffing fundamentally is and be able to give the main factors students would be looking for and be able to acclimate themselves to networking tools before moving on to the industry tools such as, WireShark. 
 
