@@ -110,7 +110,8 @@ class MainSniffer():
                     print('No Payload')
                 else:
                     rawpayload=bytes(pkts[TCP].payload)
-                    print(rawpayload.decode('utf-8', errors='ignore'))
+                    #print(rawpayload.decode('utf-8', errors='ignore'))
+                    print(rawpayload)
 
             # reverse the filter so you can filter the acknowledgement packets
             elif str(pkts[TCP].sport) == dst_port and str(pkts[TCP].dport) == src_port and str(pkts[TCP].ack) == seq_num:
@@ -123,7 +124,8 @@ class MainSniffer():
                     print('No Payload')
                 else:
                     rawpayload=bytes(pkts[TCP].payload)
-                    print(rawpayload.decode('utf-8', errors='ignore'))
+                    #print(rawpayload.decode('utf-8', errors='ignore'))
+                    print(rawpayload)
     
                 
 

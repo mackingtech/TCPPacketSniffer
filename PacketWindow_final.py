@@ -222,9 +222,13 @@ class Ui_SnifferWindow(object):
         self.textEdit_2.append("-------PAYLOAD---------")
 
         hexinfo = self.record_keep[ind].get_data('payload')
+        load = hexstr(hexinfo)
+        self.textEdit_2.append(load)
+
+
         hexinfo = str(hexinfo.decode('utf-8', errors='ignore'))
         
-        self.textEdit_2.append(hexinfo)
+        
 
         if 'POST' in hexstr(hexinfo):
             self.textEdit.append('---Check Payload for POST--')
